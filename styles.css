@@ -488,36 +488,57 @@ h3 {
 }
 
 .tuition-offer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-  align-items: center;
-  width: max-content;
+  position: relative;
+  display: grid;
+  gap: 12px;
+  width: min(100%, 760px);
   max-width: 100%;
-  margin-top: 16px;
-  border: 1px solid rgba(16, 215, 217, 0.36);
-  border-left: 5px solid var(--warm);
+  margin-top: 20px;
+  border: 1px solid rgba(16, 215, 217, 0.28);
+  border-top: 5px solid var(--warm);
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--green-dark), var(--ink));
+  background: linear-gradient(135deg, #06121e 0%, var(--ink) 58%, var(--blue) 100%);
   color: #fff;
-  padding: 13px 16px 13px 14px;
-  box-shadow: var(--shadow);
+  overflow: hidden;
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: 0 24px 64px rgba(7, 21, 34, 0.18);
 }
 
-.tuition-offer strong {
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 900;
-  line-height: 1.05;
+.tuition-offer::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  height: 1px;
+  background: var(--warm);
+  opacity: 0.9;
 }
 
 .tuition-offer span {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: max-content;
+  max-width: 100%;
+  border: 1px solid rgba(16, 215, 217, 0.48);
   border-radius: 999px;
-  color: #d7f2f2;
-  padding: 4px 9px;
-  font-size: 13px;
-  font-weight: 850;
+  color: var(--warm);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 900;
   line-height: 1;
+  text-transform: uppercase;
+}
+
+.tuition-offer strong {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 0.98;
+}
+
+.tuition-offer p {
+  margin: 0;
+  color: #d7f2f2;
+  font-size: 16px;
+  font-weight: 850;
 }
 
 .price-grid {
@@ -838,8 +859,12 @@ h3 {
 
   .tuition-offer {
     width: 100%;
-    justify-content: space-between;
     margin-top: 12px;
+    padding: 22px;
+  }
+
+  .tuition-offer strong {
+    font-size: clamp(32px, 9.5vw, 42px);
   }
 
   .program-section {
